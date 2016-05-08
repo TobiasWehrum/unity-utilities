@@ -1,10 +1,16 @@
 # SingletonMonoBehaviour and PersistentSingletonMonoBehaviour
 
-SingletonMonoBehaviour can be used to provide static access to single instances like an EntityManager easily from anywhere in the code without any relevant performance hit.
+SingletonMonoBehaviour can be used to provide static access to single instances like an EntityManager easily from anywhere in the code.
 
-PersistentSingletonMonoBehaviour also provides static instance, but additionally marks the object with [`DontDestroyOnLoad`](http://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html). That is useful for objects like a MusicManager that should continue playing when switching levels, or a PlayerData singleton that carries the name and statistics of a player between scenes.
+PersistentSingletonMonoBehaviour also provides static instance, but additionally marks the object with [`DontDestroyOnLoad`](http://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html). That is useful for objects like a MusicManager that should continue playing even when switching levels, or a PlayerData singleton that carries the name and statistics of a player between scenes.
+
+## A word of caution
+
+Note that the Singleton pattern has quite a few shortcomings. For example, the instance binding is hardwired in the code, which makes providing an alternative implementation for testing impossible. Unless you are using this for a prototype like a jam game, you might considering using a framework like [Zenject](https://github.com/modesttree/Zenject) or [StrangeIoC](http://strangeioc.github.io/strangeioc) instead.
 
 ## Examples
+
+### SingletonEntityManager
 
 If the following component is added on a game object in the scene, it could be accessed from anywhere via `SingletonEntityManager.Instance`, e.g.: `SingletonEntityManager.Instance.AddEntity(newEntity);`. This is available even before its `SingletonEntityManager.Awake()` is called.
 
@@ -35,10 +41,11 @@ public class SingletonEntityManager : SingletonMonoBehaviour<SingletonEntityMana
 }
 ```
 
-The `SingletonMusicManager` in the following example can be accessed in the same way, but a) is not destroyed
-between scenes and b) provides callbacks.
+### SingletonMusicManager
 
-You could drop this SingletonMusicManager in any scene you work on. If at any time there are two `SingletonMusicManager`s, the one from the previous
+The `SingletonMusicManager` in the following example can be accessed in the same way, but it is not destroyed when the scenes switches.
+
+You could drop this SingletonMusicManager in multiple scenes that you work on. If at any time there are two `SingletonMusicManager`, the one from the previous
 scene survives and the new one is destroyed. (For that reason, you should never use `SingletonMusicManager.Awake()`. Instead, use `OnPersistentSingletonAwake()`
 because it is only called on "surviving" instances.)
 

@@ -4,6 +4,8 @@ This class is useful for things like cooldowns or spawn delays. It is also helpf
 
 ## Examples
 
+### CountdownExample
+
 ```C#
 public class CountdownExample : MonoBehaviour
 {
@@ -63,6 +65,8 @@ public class CountdownExample : MonoBehaviour
 	}
 ```
 
+### CountdownPropertyExample
+
 You can also use `CountdownPropertyOnce` and `CountdownPropertyLoop` to get the values directly from the
 editor. Live-editing works - if you change the value in the editor, it will be used in the next loop.
 
@@ -91,6 +95,6 @@ public class CountdownPropertyExample : MonoBehaviour
 }
 ```
 
-# Dependencies
+## Dependencies
 
 None.

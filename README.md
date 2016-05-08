@@ -9,12 +9,14 @@ If you find any bugs or have suggestions, please add an [Issue](https://github.c
 ## Overview
 * [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown): Useful for things like cooldowns or spawn delays. It is also helpful to tween things by using the `PercentElapsed` property.
 * [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue): Changes an output value in an editable range over time with an editable speed using [Perlin Noise](http://docs.unity3d.com/ScriptReference/Mathf.PerlinNoise.html).
-* [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range): An editable data type that takes an int or float range. (E.g.: "Spawn 2 to 4 enemies.")
+* [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range): An editable data type that takes an int or float range.  Used for things like "Spawn 2 to 4 enemies."
 * [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton): Allows easy and convenient access to a Singleton. Optionally make a Singleton persist between scenes while making sure only one exists.
 
 ## Usage
 
-To use them, just drop them into the Assets folder of your projects. (Or better yet, make an "Assets/Extensions/UnityUtitilites" folder and drop them there. Hurray for proper organisation.)
+To use the scripts, just drop them into the Assets folder of your projects. Or better yet, make an "Assets/Extensions/UnityUtitilites" folder and drop them there. Hurray for proper organisation.
+
+You can also just use selected scripts, but you should check the "Dependencies" section in the respective folder to make sure you copy everything you need.
 
 ## Changelog
-* 2015-05-08: Added [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown), NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue), [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range) and [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton).
+* 2015-05-08: Added [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown), [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue), [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range) and [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton).

@@ -6,9 +6,11 @@ using UnityEngine;
 
 namespace UnityUtilities
 {
-    // Drop an instance of this in the scene.
-    // The instance can accessed via SingletonEntityManager.Instance.
-    // E.g.: SingletonEntityManager.Instance.AddEntity(newEntity);
+    /* If the following component is added on a game object in the scene, it could be accessed from anywhere
+     * via SingletonEntityManager.Instance, e.g.: SingletonEntityManager.Instance.AddEntity(newEntity);
+     * 
+     * This is available even before its SingletonEntityManager.Awake() is called.
+    */
 
     public class SingletonEntityManager : SingletonMonoBehaviour<SingletonEntityManager>
     {

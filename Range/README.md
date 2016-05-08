@@ -1,6 +1,6 @@
 # RangeInt/Float
 
-`RangeInt`/`RangeFloat` are an editable data type that takes an int or float range. (E.g.: "Spawn 2 to 4 enemies.")
+`RangeInt`/`RangeFloat` are an editable data type that takes an int or float range. Used for things like "Spawn 2 to 4 enemies."
 
 ## Example
 
