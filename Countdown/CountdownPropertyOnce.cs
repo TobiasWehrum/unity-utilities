@@ -5,7 +5,7 @@ using UnityEngine;
 namespace UnityUtilities
 {
     /// <summary>
-    /// A version of <see cref="Countdown"/> that can be directly filled in the Editor.
+    /// A version of <see cref="Countdown"/> that can be set in the Editor.
     /// Just called once, but refreshes the total time on each call to <see cref="Countdown.Reset()"/>.
     /// </summary>
     [Serializable]

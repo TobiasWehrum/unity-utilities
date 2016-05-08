@@ -54,7 +54,7 @@ namespace UnityUtilities
         /// Updates the <see cref="OutputValue"/>. Should be called once per frame before using <see cref="OutputValue"/> for the first time.
         /// </summary>
         /// <param name="deltaTime">Optional: Provide the deltaTime for the scrolling if it isn't Time.deltaTime.</param>
-        public void Update(float? deltaTime = null)
+        public void Progress(float? deltaTime = null)
         {
             if (!initialized)
             {

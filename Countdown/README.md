@@ -1,6 +1,6 @@
 # Countdown
 
-This class is useful when you want to wait for a certain time, do something every few seconds or change a value over time.
+This class is useful for things like cooldowns or spawn delays. It is also helpful to tween things by using the `PercentElapsed` property.
 
 ## Examples
 
@@ -33,7 +33,7 @@ public class CountdownExample : MonoBehaviour
 		if (countdownLoop.Progress())
 			Debug.Log("This is logged every 2 seconds.");
 
-		// Looping automatically, TotalDuration is chosen again every loop between 1 and 5
+		// Looping automatically. Duration is chosen between 1 and 5  every loop.
 		if (countdownRandom.Progress())
 			Debug.Log("This is logged every 1 to 5 seconds.");
 
@@ -56,15 +56,15 @@ public class CountdownExample : MonoBehaviour
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			if (countdownDelay.IsRunning)
-				Debug.Log("countdownDelay is " + Mathf.FloorToInt(countdownDelay.PercentElapsed * 100) + "% complete.");
+				Debug.Log("countdownDelay is " + (countdownDelay.PercentElapsed * 100) + "% complete.");
 			else
 				Debug.Log("countdownDelay is stopped.");
 		}
 	}
 ```
 
-You can also use `CountdownPropertyOnce` and `CountdownPropertyLoop` to get the values directly from the editor. Live-editing works for
-that too - if you change the value in the editor, it will be used in the next loop.
+You can also use `CountdownPropertyOnce` and `CountdownPropertyLoop` to get the values directly from the
+editor. Live-editing works - if you change the value in the editor, it will be used in the next loop.
 
 ![CountdownPropertyExample Editor Screenshot](../_Images/CountdownPropertyExample.png)
 
@@ -90,3 +90,7 @@ public class CountdownPropertyExample : MonoBehaviour
 	}
 }
 ```
+
+# Dependencies
+
+None.

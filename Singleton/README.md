@@ -1,0 +1,86 @@
+# SingletonMonoBehaviour and PersistentSingletonMonoBehaviour
+
+SingletonMonoBehaviour can be used to provide static access to single instances like an EntityManager easily from anywhere in the code without any relevant performance hit.
+
+PersistentSingletonMonoBehaviour also provides static instance, but additionally marks the object with [`DontDestroyOnLoad`](http://docs.unity3d.com/ScriptReference/Object.DontDestroyOnLoad.html). That is useful for objects like a MusicManager that should continue playing when switching levels, or a PlayerData singleton that carries the name and statistics of a player between scenes.
+
+## Examples
+
+If the following component is added on a game object in the scene, it could be accessed from anywhere via `SingletonEntityManager.Instance`, e.g.: `SingletonEntityManager.Instance.AddEntity(newEntity);`. This is available even before its `SingletonEntityManager.Awake()` is called.
+
+```C#
+public class SingletonEntityManager : SingletonMonoBehaviour<SingletonEntityManager>
+{
+	List<GameObject> entities;
+
+	public IEnumerable<GameObject> Entities
+	{
+		get { return entities; }
+	}
+
+	void Awake()
+	{
+		entities = new List<GameObject>();
+	}
+
+	public void AddEntity(GameObject entity)
+	{
+		entities.Add(entity);
+	}
+
+	public void RemoveEntity(GameObject entity)
+	{
+		entities.Remove(entity);
+	}
+}
+```
+
+The `SingletonMusicManager` in the following example can be accessed in the same way, but a) is not destroyed
+between scenes and b) provides callbacks.
+
+You could drop this SingletonMusicManager in any scene you work on. If at any time there are two `SingletonMusicManager`s, the one from the previous
+scene survives and the new one is destroyed. (For that reason, you should never use `SingletonMusicManager.Awake()`. Instead, use `OnPersistentSingletonAwake()`
+because it is only called on "surviving" instances.)
+
+Note that `SingletonMusicManager.Instance` is only available after `SingletonMusicManager.Awake()` was called, so if you need it in another `Awake()`
+call, you should put the `SingletonMusicManager` higher in the [Script Execution Order](http://docs.unity3d.com/Manual/class-ScriptExecution.html).
+
+```C#
+public class SingletonMusicManager : PersistentSingletonMonoBehaviour<SingletonMusicManager>
+{
+	protected override void OnPersistentSingletonAwake()
+	{
+		base.OnPersistentSingletonAwake();
+
+		// Start playing the music the first time Awake() is called
+		PlayMusic();
+	}
+
+	protected override void OnSceneSwitched()
+	{
+		base.OnSceneSwitched();
+
+		// Fade to random song once a new scene is loaded
+		FadeToRandomSong();
+	}
+
+	public void PlayMusic()
+	{
+		// Start playing
+	}
+
+	public void StopMusic()
+	{
+		// Stop playing
+	}
+
+	public void FadeToRandomSong()
+	{
+		// Fade to a random song
+	}
+}
+```
+
+## Dependencies
+
+None.
