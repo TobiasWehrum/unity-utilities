@@ -3,9 +3,7 @@
 `RangeInt`/`RangeFloat` are editable data types that take an int/float range. Used for things like "Spawn 2 to 4 enemies."
 
 ## Example
-
-@image html ../_Images/RangeExample.png
-![RangeExample Editor Screenshot](../_Images/RangeExample.png)
+![RangeExample Editor Screenshot](https://raw.githubusercontent.com/TobiasWehrum/unity-utilities/master/_Images/RangeExample.png)
 
 ```C#
 public class RangeExample : MonoBehaviour

@@ -4,7 +4,7 @@ Enter a range and a speed in the editor and you will get an output value in that
 
 ## Example
 
-![NoiseOutputValueExample Editor Screenshot](../_Images/NoiseOutputValueExample.gif)
+![NoiseOutputValueExample Editor Screenshot](https://raw.githubusercontent.com/TobiasWehrum/unity-utilities/master/_Images/NoiseOutputValueExample.gif)
 
 ```C#
 public class NoiseOutputValueExample : MonoBehaviour

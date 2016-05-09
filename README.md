@@ -18,5 +18,9 @@ To use the scripts, just drop them into the Assets folder of your projects. Or b
 
 You can also just use selected scripts, but you should check the "Dependencies" section in the respective folder to make sure you copy everything you need.
 
+## Documentation
+
+The class documentation is available [here](http://tobiaswehrum.github.io/UnityUtilities/html/annotated.html).
+
 ## Changelog
 * 2015-05-08: Added [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown), [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue), [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range) and [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton).
