@@ -1,6 +1,6 @@
 # NoiseOutputValue
 
-Changes an output value in an editable range over time with an editable speed using [Perlin Noise](http://docs.unity3d.com/ScriptReference/Mathf.PerlinNoise.html).
+Enter a range and a speed in the editor and you will get an output value in that ranges that fluctuates fluently over time using [Perlin Noise](http://docs.unity3d.com/ScriptReference/Mathf.PerlinNoise.html).
 
 ## Example
 

@@ -3,9 +3,9 @@
 namespace UnityUtilities
 {
     /// <summary>
-    /// <para>Any class that extends from this one will persist through scenes (via <see cref="Object.DontDestroyOnLoad"/>) and can be handily accessed
-    /// via the static <see cref="Instance"/> property.</para>
-    /// <para>If a new scene is loaded with a new instance of this class, while a persistent instance already exists, the instance in the scene is destroyed.
+    /// Any class that extends from this one will persist through scenes (via <see cref="Object.DontDestroyOnLoad"/>) and can be handily accessed
+    /// via the static <see cref="Instance"/> property.
+    /// <para>If a new scene is loaded with a new instance of this class while another persistent instance already exists, the new instance in the scene is destroyed.
     /// This allows you to make this a prefab and have it in all scenes that you are working on.</para>
     /// </summary>
     /// <typeparam name="TSubclass">The subclass that extends from this class.</typeparam>

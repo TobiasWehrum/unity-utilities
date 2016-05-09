@@ -39,10 +39,18 @@ namespace UnityUtilities
         /// </summary>
         public float RandomInclusive { get { return UnityEngine.Random.Range(from, to); } }
 
+        /// <summary>
+        /// Create a RangeFloat with 0-0 as the range. Needed for the editor.
+        /// </summary>
         public RangeFloat()
         {
         }
 
+        /// <summary>
+        /// Create a RangeFloat with a certain range.
+        /// </summary>
+        /// <param name="from">Lower range bound.</param>
+        /// <param name="to">Upper range bound.</param>
         public RangeFloat(float @from, float to)
         {
             this.@from = @from;

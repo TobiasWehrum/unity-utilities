@@ -34,10 +34,18 @@ namespace UnityUtilities
             return time;
         }
 
+        /// <summary>
+        /// Called before the serialization (reading the editor value) of the "time" property happens.
+        /// It's empty and just here because <see cref="ISerializationCallbackReceiver"/> needs it.
+        /// </summary>
         public void OnBeforeSerialize()
         {
         }
 
+        /// <summary>
+        /// Called after the serialization (reading the editor value) of the "time" property happens.
+        /// If the timer is not initialized yet, it will be here.
+        /// </summary>
         public void OnAfterDeserialize()
         {
             if (initialized)

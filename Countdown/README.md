@@ -1,6 +1,8 @@
 # Countdown
 
-This class is useful for things like cooldowns or spawn delays. It is also helpful to tween things by using the `PercentElapsed` property.
+This class is useful for things like cooldowns or spawn delays. It is also helpful for tweening things by using the `PercentElapsed` property.
+
+(But if you want to tween a lot of stuff, check out [DOTween](http://dotween.demigiant.com) for that! Actually, check it out either way, DOTween is fabulous.)
 
 ## Examples
 

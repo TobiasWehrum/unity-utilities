@@ -7,9 +7,9 @@ Everything is released under the [MIT License](https://opensource.org/licenses/M
 If you find any bugs or have suggestions, please add an [Issue](https://github.com/TobiasWehrum/unity-utilities/issues) here or send me a mail at Tobias.Wehrum@dragonlab.de.
 
 ## Overview
-* [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown): Useful for things like cooldowns or spawn delays. It is also helpful to tween things by using the `PercentElapsed` property.
-* [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue): Changes an output value in an editable range over time with an editable speed using [Perlin Noise](http://docs.unity3d.com/ScriptReference/Mathf.PerlinNoise.html).
-* [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range): An editable data type that takes an int or float range.  Used for things like "Spawn 2 to 4 enemies."
+* [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown): Useful for things like cooldowns or spawn delays. It is also helpful for tweening things by using the `PercentElapsed` property.
+* [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue): Enter a range and a speed in the editor, get an output value that fluctuates over time using [Perlin Noise](http://docs.unity3d.com/ScriptReference/Mathf.PerlinNoise.html).
+* [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range): Editable data types that takes an int/float range.  Used for things like "Spawn 2 to 4 enemies."
 * [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton): Allows easy and convenient creation of a Singleton. Optionally makes a Singleton persist between scenes while ensuring that only one exists.
 
 ## Usage

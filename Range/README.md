@@ -1,9 +1,10 @@
 # RangeInt/Float
 
-`RangeInt`/`RangeFloat` are an editable data type that takes an int or float range. Used for things like "Spawn 2 to 4 enemies."
+`RangeInt`/`RangeFloat` are editable data types that take an int/float range. Used for things like "Spawn 2 to 4 enemies."
 
 ## Example
 
+@image html ../_Images/RangeExample.png
 ![RangeExample Editor Screenshot](../_Images/RangeExample.png)
 
 ```C#
