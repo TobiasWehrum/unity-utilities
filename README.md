@@ -23,4 +23,5 @@ You can also just use selected scripts, but you should check the "Dependencies" 
 The class documentation is available [here](http://tobiaswehrum.github.io/UnityUtilities/html/annotated.html).
 
 ## Changelog
+* 2015-05-09: Added the [class documentation website](http://tobiaswehrum.github.io/UnityUtilities/html/annotated.html).
 * 2015-05-08: Added [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown), [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue), [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range) and [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton).
