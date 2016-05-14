@@ -2,7 +2,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace UnityUtilities
+namespace UnityUtilities.Examples
 {
     public class CountdownPropertyExample : MonoBehaviour
     {

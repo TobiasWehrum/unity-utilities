@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace UnityUtilities
+namespace UnityUtilities.Examples
 {
     /* The SingletonMusicManager in the following example can be accessed in the same way, but it is not destroyed when the scenes switches.
 

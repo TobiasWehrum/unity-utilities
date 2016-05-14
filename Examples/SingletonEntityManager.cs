@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace UnityUtilities
+namespace UnityUtilities.Examples
 {
     /* If the following component is added on a game object in the scene, it could be accessed from anywhere
      * via SingletonEntityManager.Instance, e.g.: SingletonEntityManager.Instance.AddEntity(newEntity);

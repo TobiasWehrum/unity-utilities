@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace UnityUtilities
+namespace UnityUtilities.Examples
 {
     public class NoiseOutputValueExample : MonoBehaviour
     {
