@@ -15,8 +15,8 @@ namespace UnityUtilities
         /// Useful for example to find the closest item. Reverse the generated values to find the item with the highest generated value.
         /// 
         /// This returns the same as list.Where(element => predicateValue(valueConverter(element))).OrderBy(valueConverter).First(), but it
-        /// a) doesn't need to order the whole list and
-        /// b) doesn't need to call valueConverted more than once per element.
+        /// a) doesn't order the whole list and
+        /// b) doesn't call valueConverted more than once per element.
         /// </summary>
         /// <typeparam name="TElement">The collection element type.</typeparam>
         /// <typeparam name="TValue">The generated value type.</typeparam>
@@ -55,10 +55,10 @@ namespace UnityUtilities
         }
 
         /// <summary>
-        /// Returns the element nearest to the referencePoint and in minimum/maximum range.
+        /// Returns the component nearest to the referencePoint and in minimum/maximum range.
         /// </summary>
         /// <typeparam name="TElement">The collection element type. Needs to be a subclass of <see cref="Component"/>.</typeparam>
-        /// <param name="list">The list of elements to get the closest.</param>
+        /// <param name="list">The list of components.</param>
         /// <param name="referencePoint">A reference point to get the distance from.</param>
         /// <param name="minDistance">Optional: The minimum distance.</param>
         /// <param name="maxDistance">Optional: The maximum distance.</param>
@@ -129,7 +129,7 @@ namespace UnityUtilities
         /// Returns a random element from the list.
         /// </summary>
         /// <typeparam name="T">The list element type.</typeparam>
-        /// <param name="array">The list to return an element from.</param>
+        /// <param name="list">The list to return an element from.</param>
         /// <returns>A random element from the list.</returns>
         public static T RandomElement<T>(this List<T> list)
         {

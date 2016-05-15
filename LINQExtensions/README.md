@@ -1,6 +1,6 @@
 # LINQExtensions
 
-A collection of extension methods for `IEnumerable`s, `List`s and arrays.
+A collection of extension methods for `IEnumerable`, `List` and arrays.
 
 ## Examples
 
