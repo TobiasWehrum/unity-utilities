@@ -8,8 +8,10 @@ If you find any bugs or have suggestions, please add an [Issue](https://github.c
 
 ## Overview
 * [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown): Useful for things like cooldowns or spawn delays. It is also helpful for tweening things by using the `PercentElapsed` property.
+* [LINQExtensions](https://github.com/TobiasWehrum/unity-utilities/tree/master/LINQExtensions): A collection of extension methods for `IEnumerable`s, `List`s and arrays.
 * [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue): Enter a range and a speed in the editor, get an output value that fluctuates over time using [Perlin Noise](http://docs.unity3d.com/ScriptReference/Mathf.PerlinNoise.html).
-* [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range): Editable data types that takes an int/float range.  Used for things like "Spawn 2 to 4 enemies."
+* [RandomBag](https://github.com/TobiasWehrum/unity-utilities/tree/master/RandomBag): A `RandomBag` gives you random items from a group while ensuring that in a certain interval every item was given back the same number of times.
+* [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range): Editable data types that take an `int`/`float` range.  Used for things like "Spawn 2 to 4 enemies."
 * [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton): Allows easy and convenient creation of a Singleton. Optionally makes a Singleton persist between scenes while ensuring that only one exists.
 
 ## Usage
@@ -23,5 +25,6 @@ You can also just use selected scripts, but you should check the "Dependencies" 
 The class documentation is available [here](http://tobiaswehrum.github.io/UnityUtilities/html/annotated.html).
 
 ## Changelog
-* 2015-05-09: Added the [class documentation website](http://tobiaswehrum.github.io/UnityUtilities/html/annotated.html).
-* 2015-05-08: Added [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown), [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue), [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range) and [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton).
+* 2016-05-15: Added [LINQExtensions](https://github.com/TobiasWehrum/unity-utilities/tree/master/LINQExtensions) and [RandomBag](https://github.com/TobiasWehrum/unity-utilities/tree/master/RandomBag).
+* 2016-05-09: Added the [class documentation website](http://tobiaswehrum.github.io/UnityUtilities/html/annotated.html).
+* 2016-05-08: Added [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown), [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue), [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range) and [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton).
