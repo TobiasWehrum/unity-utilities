@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 namespace UnityUtilities.Examples
 {
@@ -14,7 +14,7 @@ namespace UnityUtilities.Examples
             // Looping countdown, every 2 seconds
             countdownLoop = new Countdown(true, 2f);
 
-            // Looping countdown, delegate is called to determine duration (1 to 5 seconds)
+            // Looping countdown, delegate is called every loop to determine duration (1 to 5 seconds)
             countdownRandom = new Countdown(true, () => UnityEngine.Random.Range(1f, 5f));
 
             // Non-looping countdown, 5 seconds duration. Can be reset by calling Reset().
@@ -30,7 +30,7 @@ namespace UnityUtilities.Examples
             if (countdownLoop.Progress())
                 Debug.Log("This is logged every 2 seconds.");
 
-            // Looping automatically, TotalDuration is chosen again every loop between 1 and 5
+            // Looping automatically. Duration is chosen between 1 and 5 every loop.
             if (countdownRandom.Progress())
                 Debug.Log("This is logged every 1 to 5 seconds.");
 
