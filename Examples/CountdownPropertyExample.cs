@@ -4,6 +4,7 @@ namespace UnityUtilities.Examples
 {
     public class CountdownPropertyExample : MonoBehaviour
     {
+        [Tooltip("Test")]
         [SerializeField] CountdownPropertyOnce countdownOnce;
         [SerializeField] CountdownPropertyLoop countdownLoop;
 

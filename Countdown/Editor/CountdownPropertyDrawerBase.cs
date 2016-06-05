@@ -11,6 +11,9 @@ namespace UnityUtilities
             // prefab override logic works on the entire property.
             EditorGUI.BeginProperty(position, label, property);
 
+            // Set tooltip, if any
+            label.tooltip = EditorHelper.GetTooltip(fieldInfo);
+
             // Draw label
             position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
 

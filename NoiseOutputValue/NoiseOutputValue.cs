@@ -13,11 +13,13 @@ namespace UnityUtilities
         /// <summary>
         /// The range of the output value.
         /// </summary>
+        [Tooltip("The range of the output value.")]
         [SerializeField] RangeFloat range = new RangeFloat(0f, 1f);
 
         /// <summary>
         /// How fast to scroll over the perlin noise.
         /// </summary>
+        [Tooltip("How fast to scroll over the perlin noise.")]
         [SerializeField] float speed = 0.1f;
 
         /// <summary>
