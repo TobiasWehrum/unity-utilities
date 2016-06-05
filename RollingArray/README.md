@@ -2,7 +2,7 @@
 
 `RollingArray` is a container that always stores the last arraySize elements added. New elements are added via `Append()`, which automatically rolls over once the maximum number of elements is reached, overwriting the oldest element. `array[i]` always returns the oldest element that still exists + i. That way, this container always stores the last arraySize elements added.
  
-Adding is O(1), retrieving is O(1) and (with the exception of `GetEnumerator()`) no new memory is allocated.
+Adding is O(1), retrieving is O(1) and (with the exception of `GetEnumerator()`) no new memory is allocated after the initial creation.
 
 You can read more about the `GetEnumerator()` memory problem (and Unity's dreadful memory allocation troubles) here under "Should you avoid foreach loops?": http://www.gamasutra.com/blogs/WendelinReich/20131109/203841/C_Memory_Management_for_Unity_Developers_part_1_of_3.php
 

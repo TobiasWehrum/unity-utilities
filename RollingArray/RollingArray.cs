@@ -12,7 +12,7 @@ namespace UnityUtilities
     /// exists + i. That way, this container always stores the last arraySize elements added.
     /// 
     /// Adding is O(1), retrieving is O(1) and (with the exception of GetEnumerator()) no new memory
-    /// is allocated.
+    /// is allocated after the initial creation.
     /// </summary>
     /// <typeparam name="T">The collection element type.</typeparam>
     public class RollingArray<T> : IEnumerable<T>
