@@ -72,7 +72,7 @@ namespace UnityUtilities
             get
             {
                 if (IsEmpty)
-                    throw new IndexOutOfRangeException();
+                    throw new IndexOutOfRangeException("The array is current empty.");
 
                 return this[0];
             }
@@ -87,7 +87,7 @@ namespace UnityUtilities
             get
             {
                 if (IsEmpty)
-                    throw new IndexOutOfRangeException();
+                    throw new IndexOutOfRangeException("The array is current empty.");
 
                 return this[Count - 1];
             }
@@ -107,12 +107,18 @@ namespace UnityUtilities
         {
             get
             {
+                if ((i < 0) || (i >= Count))
+                    throw new IndexOutOfRangeException("Index " + i + " (current count: " + Count + ") is out of range.");
+
                 i = (i + nextElementIndex - Count + array.Length) % array.Length;
                 return array[i];
             }
 
             set
             {
+                if ((i < 0) || (i >= Count))
+                    throw new IndexOutOfRangeException("Index " + i + " (current count: " + Count + ") is out of range.");
+
                 i = (i + nextElementIndex - Count + array.Length) % array.Length;
                 array[i] = value;
             }
