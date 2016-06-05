@@ -1,6 +1,6 @@
 # EditorHelper
 
-The `EditorHelper` contains static helper methods for editor classes. Right now, there's only one of them for getting the tooltip of a field.
+Contains a method for getting the `[Tooltip]` attribute content of fields for editor classes. I might add more helper methods in the future.
  
 ## Example
 
