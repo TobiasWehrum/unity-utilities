@@ -59,7 +59,7 @@ namespace UnityUtilities
         /// <param name="optional">If this is set to false, and error message will be shown if there is no instance found.</param>
         static void UpdateInstance(bool optional)
         {
-            var instances = (TSubclass[]) FindObjectsOfType(typeof (TSubclass));
+            var instances = FindObjectsOfType<TSubclass>();
             if (instances.Length == 1)
             {
                 instance = instances[0];
