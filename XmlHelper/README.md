@@ -58,12 +58,12 @@ string xmlString = data.SerializeToXmlString();
 
 /* Output:
 
-	<?xml version="1.0" encoding="utf-16"?>
-	<TestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-		<field>1</field>
-		<Property>2.3</Property>
-		<AutoProperty>true</AutoProperty>
-	</TestData>
+<?xml version="1.0" encoding="utf-16"?>
+<TestData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<field>1</field>
+	<Property>2.3</Property>
+	<AutoProperty>true</AutoProperty>
+</TestData>
  */
 Debug.Log(xmlString);
 
