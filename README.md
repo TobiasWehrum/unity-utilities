@@ -16,6 +16,7 @@ If you find any bugs or have suggestions, please add an [Issue](https://github.c
 * [RollingArray](https://github.com/TobiasWehrum/unity-utilities/tree/master/RollingArray): Collection that keeps the last x elements that are added to it.
 * [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton): Allows easy and convenient creation of a Singleton. Optionally makes a Singleton persist between scenes while ensuring that only one exists.
 * [UnityHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/UnityHelper): Contains a plethora of useful extensions and helpers for Transform, GameObject, Vector2/3/4, Rect and more.
+* [XmlHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/XmlHelper): Serializes data to XML strings and makes accessing optional element content and attributes in general XMLs easier.
 
 ## Usage
 
@@ -28,6 +29,7 @@ You can also just use selected scripts, but you should check the "Dependencies" 
 The class documentation is available [here](http://tobiaswehrum.github.io/UnityUtilities/html/annotated.html).
 
 ## Changelog
+* 2016-06-19: Added [XmlHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/XmlHelper).
 * 2016-06-08: Added [UnityHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/UnityHelper).
 * 2016-06-05: Added [EditorHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/EditorHelper) and [RollingArray](https://github.com/TobiasWehrum/unity-utilities/tree/master/RollingArray). Added `[Tooltip]` for `NoiseOutputValue` and edited the existing `PropertyDrawer` to use tooltips.
 * 2016-05-15: Added [LINQExtensions](https://github.com/TobiasWehrum/unity-utilities/tree/master/LINQExtensions) and [RandomBag](https://github.com/TobiasWehrum/unity-utilities/tree/master/RandomBag).
