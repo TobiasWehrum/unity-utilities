@@ -5,7 +5,7 @@ The XmlHelper serializes and deserializes to/from XML and allows convenient acce
 With a few exceptions (e.g. arrays of ArrayList and arrays of List<T>), all public attributes and fields of any public class should be serialized without any
 further need to tag the elements. The only thing needed is a public default constructor.
 
-For finer control, see the MSDN document on XmlSerializer: https://msdn.microsoft.com/en-us/library/system.xml.serialization.xmlserializer(v=vs.110).aspx
+For finer control, see the MSDN documentation on XmlSerializer: https://msdn.microsoft.com/en-us/library/system.xml.serialization.xmlserializer(v=vs.110).aspx
 
 ## Examples
 
