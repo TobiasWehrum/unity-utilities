@@ -12,12 +12,12 @@ namespace UnityUtilities
         /// <summary>
         /// The range start.
         /// </summary>
-        [SerializeField] private float from;
+        [SerializeField] float from;
 
         /// <summary>
         /// The range end.
         /// </summary>
-        [SerializeField] private float to;
+        [SerializeField] float to;
 
         /// <summary>
         /// The range start.

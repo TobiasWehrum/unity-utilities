@@ -7,7 +7,7 @@ namespace UnityUtilities.Examples
         [SerializeField] NoiseOutputValue positionNoise;
         [SerializeField] Transform sphere;
 
-        private void Update()
+        void Update()
         {
             // Updates the value with Time.deltaTime*speed
             positionNoise.Progress();

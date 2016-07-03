@@ -6,7 +6,7 @@ namespace UnityUtilities.Examples
 {
     public class RandomBagExample : MonoBehaviour
     {
-        private enum TetrisPiece
+        enum TetrisPiece
         {
             Line, Square, T, J, L, S, Z
         }

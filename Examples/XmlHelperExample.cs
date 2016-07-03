@@ -2,6 +2,7 @@
 using System.Xml.Serialization;
 using UnityEngine;
 
+#pragma warning disable 414, 219
 namespace UnityUtilities.Examples
 {
     public class XmlHelperExample : MonoBehaviour
@@ -115,3 +116,4 @@ namespace UnityUtilities.Examples
         }
     }
 }
+#pragma warning restore 414, 219

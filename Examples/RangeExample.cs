@@ -7,7 +7,7 @@ namespace UnityUtilities.Examples
         [SerializeField] RangeInt amountRange;
         [SerializeField] RangeFloat numberRange;
 
-        private void Awake()
+        void Awake()
         {
             // Get a random number in amountRange
             int amount = amountRange.RandomInclusive;

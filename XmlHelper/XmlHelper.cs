@@ -20,7 +20,9 @@ namespace UnityUtilities
         /// <summary>
         /// A thread lock object to make access to <see cref="serializersByType"/> threadsafe.
         /// </summary>
+#pragma warning disable 414
         static Object serializersByTypeLock = new object();
+#pragma warning restore 414
 
         /// <summary>
         /// Gets a cached XmlSerializer for the specified type.
