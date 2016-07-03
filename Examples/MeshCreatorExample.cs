@@ -41,11 +41,12 @@ namespace UnityUtilities.Examples
 
         void Update()
         {
-            // Make the vertices wobble independently
+            // Make the vertices wobble
             for (int i = 0; i < meshCreator.MeshVerticesCount; i++)
             {
                 MeshVertex meshVertex = meshCreator.MeshVertices[i];
-                meshVertex.Position = meshVertex.Position.normalized * 2f * Mathf.Lerp(1f, 2f, Mathf.Abs(Mathf.Cos(Time.time + i / 4f)));
+                float scale = Mathf.Lerp(2f, 4f, Mathf.Abs(Mathf.Cos(Time.time + i / 4f)));
+                meshVertex.Position = meshVertex.Position.normalized * scale;
             }
 
             // Update the mesh
