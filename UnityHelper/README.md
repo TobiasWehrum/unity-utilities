@@ -88,6 +88,19 @@ Rect biggerRect = rect.Extend(10);
 Vector2[] cornerPoints = rect.GetCornerPoints();
 ```
 
+### Random
+
+```C#
+// Points in a random 2D direction
+var randomDirection2D = UnityHelper.RandomOnUnitCircle;
+
+// Either goes left or right
+var deltaX = 20 * UnityHelper.RandomSign;
+
+// Gets set to either choice
+var choice = UnityHelper.RandomBool ? "Choice A" : "Choice B";
+```
+
 ### PlayerPrefs: Bool
 
 ```C#

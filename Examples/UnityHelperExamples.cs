@@ -19,6 +19,7 @@ namespace UnityUtilities.Examples
             RectExamples();
             PlayerPrefsExample();
             CapsuleCastExample();
+            RandomExamples();
             OtherExamples();
         }
 
@@ -124,7 +125,19 @@ namespace UnityUtilities.Examples
             // Cast 2 units forwards
             bool hitSomething = Physics.CapsuleCast(point1, point2, radius, Vector3.forward, 2f);
         }
- 
+
+        void RandomExamples()
+        {
+            // Points in a random 2D direction
+            var randomDirection2D = UnityHelper.RandomOnUnitCircle;
+
+            // Either goes left or right
+            var deltaX = 20 * UnityHelper.RandomSign;
+
+            // Gets set to either choice
+            var choice = UnityHelper.RandomBool ? "Choice A" : "Choice B";
+        }
+
         void OtherExamples()
         {
             // Does the layer mask contain layer 4?

@@ -97,7 +97,7 @@ namespace UnityUtilities
         }
 
         /// <summary>
-        /// Shuffles an list in place.
+        /// Shuffles a list in place.
         /// </summary>
         /// <typeparam name="T">The list element type.</typeparam>
         /// <param name="list">The list to shuffle.</param>

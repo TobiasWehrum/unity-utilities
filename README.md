@@ -1,6 +1,6 @@
 # Unity Utilities
 
-Over the years, I've worked on a lot of [projects](http://dragonlab.de/portfolio) and [game jam prototypes](http://blog.dragonlab.de/tag/unity) with Unity3D and there are some pieces of code that I've needed time and time again. I'm sharing them here in the hopes that they are useful for you too! It's just a few scripts for now, but expect updates with more once I clean them up.
+Over the years, I've worked on a lot of [projects](http://dragonlab.de/portfolio) and [game jam prototypes](http://blog.dragonlab.de/tag/unity) with Unity3D and there are some pieces of code that I've needed time and time again. I'm sharing them here in the hopes that they are useful for you too!
 
 Everything is released under the [MIT License](https://opensource.org/licenses/MIT).
 
@@ -10,6 +10,7 @@ If you find any bugs or have suggestions, please add an [Issue](https://github.c
 * [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown): Useful for things like cooldowns or spawn delays. It is also helpful for tweening things by using the `PercentElapsed` property.
 * [EditorHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/EditorHelper): Gets the `[Tooltip]` attribute content of fields for editor classes. Might get more helper methods in the future.
 * [LINQExtensions](https://github.com/TobiasWehrum/unity-utilities/tree/master/LINQExtensions): A collection of extension methods for `IEnumerable`, `List` and arrays.
+* [MathHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/MathHelper): Helper methods for time-independent eased lerping, mapping and angles.
 * [MeshCreator](https://github.com/TobiasWehrum/unity-utilities/tree/master/MeshCreator): Makes it more convenient to create meshes via code.
 * [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue): Enter a range and a speed in the editor, get an output value that fluctuates over time using [Perlin Noise](http://docs.unity3d.com/ScriptReference/Mathf.PerlinNoise.html).
 * [RandomBag](https://github.com/TobiasWehrum/unity-utilities/tree/master/RandomBag): A `RandomBag` gives you random items from a group while ensuring that in a certain interval every item was given back the same number of times.
@@ -30,6 +31,7 @@ You can also just use selected scripts, but you should check the "Dependencies" 
 The class documentation is available [here](http://tobiaswehrum.github.io/UnityUtilities/html/annotated.html).
 
 ## Changelog
+* 2016-10-20: Added [MathHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/MathHelper). Added random helper methods to [UnityHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/UnityHelper).
 * 2016-07-03: Added [MeshCreator](https://github.com/TobiasWehrum/unity-utilities/tree/master/MeshCreator).
 * 2016-06-19: Added [XmlHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/XmlHelper).
 * 2016-06-08: Added [UnityHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/UnityHelper).
