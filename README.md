@@ -1,4 +1,4 @@
-# Unity Utilities
+# Tobi's Unity Utilities
 
 Over the years, I've worked on a lot of [projects](http://dragonlab.de/portfolio) and [game jam prototypes](http://blog.dragonlab.de/tag/unity) with Unity3D and there are some pieces of code that I've needed time and time again. I'm sharing them here in the hopes that they are useful for you too!
 
