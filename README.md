@@ -22,7 +22,7 @@ If you find any bugs or have suggestions, please add an [Issue](https://github.c
 
 ## Usage
 
-To use the scripts, just drop them into the Assets folder of your projects. Or better yet, make an "Assets/Extensions/UnityUtitilites" folder and drop them there. Hurray for proper organisation.
+To use the scripts, just drop them into the Assets folder of your projects. Or better yet, make an "Assets/Extensions/TobisUnityUtitilites" folder and drop them there. Hurray for proper organisation.
 
 You can also just use selected scripts, but you should check the "Dependencies" section in the respective folder to make sure you copy everything you need.
 
