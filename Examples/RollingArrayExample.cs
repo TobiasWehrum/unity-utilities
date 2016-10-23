@@ -12,7 +12,7 @@ namespace UnityUtilities.Examples
         void Awake()
         {
             // Save the last 50 elements
-            mousePositions = new RollingArray<Vector2>(510);
+            mousePositions = new RollingArray<Vector2>(50);
 
             // Cache a reference to the main camera
             mainCamera = Camera.main;
