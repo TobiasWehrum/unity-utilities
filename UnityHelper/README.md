@@ -76,7 +76,7 @@ Vector3[] list = {
 					new Vector3(85, -40, 80)
 				 };
 
-// Calculates the geometric center (the average) of the input list.
+// Calculates the geometric center (the average) of the input list
 Debug.Log("Centroid: " + list.CalculateCentroid()); // => Centroid: (45.0, 0.7, 34.0)
 ```
 
