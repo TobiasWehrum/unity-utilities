@@ -35,8 +35,6 @@ namespace UnityUtilities.Examples
         {
             base.OnPersistentSingletonDestroyed();
 
-            Debug.Log("Destroy() was called on the active instance.");
-
             // Stop the music when Destroy() was called on the active instance.
             StopMusic();
         }
