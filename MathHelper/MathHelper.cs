@@ -125,7 +125,7 @@ namespace UnityUtilities
 
         #endregion
 
-        #region Miscellaneous
+        #region Framerate-Independent Lerping
 
         /// <summary>
         /// Provides a framerate-independent t for lerping towards a target.
@@ -147,8 +147,8 @@ namespace UnityUtilities
         ///     currentValue = Mathf.Lerp(currentValue, 1f, 0.95f);
         /// 
         /// every frame provides an easy way of eased lerping without tracking elapsed time or the
-        /// starting value, but since it's called every frame, the actual speed changes the higher
-        /// the framerate is.
+        /// starting value, but since it's called every frame, the actual traversed distance per
+        /// second changes the higher the framerate is.
         /// 
         /// This function replaces the lerp T to make it framerate-independent and easier to estimate.
         /// 
@@ -163,6 +163,29 @@ namespace UnityUtilities
                 deltaTime = Time.deltaTime;
 
             return 1 - Mathf.Pow(1 - factor, deltaTime);
+        }
+
+        /// <summary>
+        /// Framerate-independent eased lerping to a target value, slowing down the closer it is.
+        /// 
+        /// If you call
+        /// 
+        ///     currentValue = MathHelper.EasedLerp(currentValue, 1f, 0.75f);
+        /// 
+        /// each frame (e.g. in Update()), starting with a currentValue of 0, then after 1 second
+        /// it will be approximately 0.75 - which is 75% of the way between 0 and 1.
+        /// 
+        /// Adjusting the target or the percentPerSecond between calls is also possible.
+        /// </summary>
+        /// <param name="current">The current value.</param>
+        /// <param name="target">The target value.</param>
+        /// <param name="percentPerSecond">How much of the distance between current and target should be covered per second?</param>
+        /// <param name="deltaTime">How much time passed since the last call.</param>
+        /// <returns>The interpolated value from current to target.</returns>
+        public static float EasedLerp(float current, float target, float percentPerSecond, float deltaTime = 0f)
+        {
+            var t = EasedLerpFactor(percentPerSecond, deltaTime);
+            return Mathf.Lerp(current, target, t);
         }
 
         #endregion

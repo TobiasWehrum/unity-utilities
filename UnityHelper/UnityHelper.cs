@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -293,6 +294,75 @@ namespace UnityUtilities
             return vector.GetAngleRad() * Mathf.Rad2Deg;
         }
 
+        /// <summary>
+        /// Framerate-independent eased lerping to a target value, slowing down the closer it is.
+        /// 
+        /// If you call
+        /// 
+        ///     currentValue = UnityHelper.EasedLerpVector3(currentValue, Vector2.one, 0.75f);
+        /// 
+        /// each frame (e.g. in Update()), starting with a currentValue of Vector2.zero, then after 1 second
+        /// it will be approximately (0.75|0.75) - which is 75% of the way between Vector2.zero and Vector2.one.
+        /// 
+        /// Adjusting the target or the percentPerSecond between calls is also possible.
+        /// </summary>
+        /// <param name="current">The current value.</param>
+        /// <param name="target">The target value.</param>
+        /// <param name="percentPerSecond">How much of the distance between current and target should be covered per second?</param>
+        /// <param name="deltaTime">How much time passed since the last call.</param>
+        /// <returns>The interpolated value from current to target.</returns>
+        public static Vector2 EasedLerpVector2(Vector2 current, Vector2 target, float percentPerSecond, float deltaTime = 0f)
+        {
+            var t = MathHelper.EasedLerpFactor(percentPerSecond, deltaTime);
+            return Vector2.Lerp(current, target, t);
+        }
+
+        /// <summary>
+        /// Framerate-independent eased lerping to a target value, slowing down the closer it is.
+        /// 
+        /// If you call
+        /// 
+        ///     currentValue = UnityHelper.EasedLerpVector3(currentValue, Vector3.one, 0.75f);
+        /// 
+        /// each frame (e.g. in Update()), starting with a currentValue of Vector3.zero, then after 1 second
+        /// it will be approximately (0.75|0.75|0.75) - which is 75% of the way between Vector3.zero and Vector3.one.
+        /// 
+        /// Adjusting the target or the percentPerSecond between calls is also possible.
+        /// </summary>
+        /// <param name="current">The current value.</param>
+        /// <param name="target">The target value.</param>
+        /// <param name="percentPerSecond">How much of the distance between current and target should be covered per second?</param>
+        /// <param name="deltaTime">How much time passed since the last call.</param>
+        /// <returns>The interpolated value from current to target.</returns>
+        public static Vector3 EasedLerpVector3(Vector3 current, Vector3 target, float percentPerSecond, float deltaTime = 0f)
+        {
+            var t = MathHelper.EasedLerpFactor(percentPerSecond, deltaTime);
+            return Vector3.Lerp(current, target, t);
+        }
+
+        /// <summary>
+        /// Framerate-independent eased lerping to a target value, slowing down the closer it is.
+        /// 
+        /// If you call
+        /// 
+        ///     currentValue = UnityHelper.EasedLerpVector4(currentValue, Vector4.one, 0.75f);
+        /// 
+        /// each frame (e.g. in Update()), starting with a currentValue of Vector4.zero, then after 1 second
+        /// it will be approximately (0.75|0.75|0.75) - which is 75% of the way between Vector4.zero and Vector4.one.
+        /// 
+        /// Adjusting the target or the percentPerSecond between calls is also possible.
+        /// </summary>
+        /// <param name="current">The current value.</param>
+        /// <param name="target">The target value.</param>
+        /// <param name="percentPerSecond">How much of the distance between current and target should be covered per second?</param>
+        /// <param name="deltaTime">How much time passed since the last call.</param>
+        /// <returns>The interpolated value from current to target.</returns>
+        public static Vector4 EasedLerpVector4(Vector4 current, Vector4 target, float percentPerSecond, float deltaTime = 0f)
+        {
+            var t = MathHelper.EasedLerpFactor(percentPerSecond, deltaTime);
+            return Vector4.Lerp(current, target, t);
+        }
+
         #endregion
 
         #region Color
@@ -326,6 +396,125 @@ namespace UnityUtilities
         {
             color.a = a;
             return color;
+        }
+
+        /// <summary>
+        /// Framerate-independent eased lerping to a target value, slowing down the closer it is.
+        /// 
+        /// If you call
+        /// 
+        ///     currentValue = UnityHelper.EasedLerpVector3(currentValue, Color.white, 0.75f);
+        /// 
+        /// each frame (e.g. in Update()), starting with a currentValue of Color.black, then after 1 second
+        /// it will be approximately (0.75|0.75|0.75) - which is 75% of the way between Color.white and Color.black.
+        /// 
+        /// Adjusting the target or the percentPerSecond between calls is also possible.
+        /// </summary>
+        /// <param name="current">The current value.</param>
+        /// <param name="target">The target value.</param>
+        /// <param name="percentPerSecond">How much of the distance between current and target should be covered per second?</param>
+        /// <param name="deltaTime">How much time passed since the last call.</param>
+        /// <returns>The interpolated value from current to target.</returns>
+        public static Color EasedLerpColor(Color current, Color target, float percentPerSecond, float deltaTime = 0f)
+        {
+            var t = MathHelper.EasedLerpFactor(percentPerSecond, deltaTime);
+            return Color.Lerp(current, target, t);
+        }
+
+        /// <summary>
+        /// Calculates the average position of an array of Vector2.
+        /// </summary>
+        /// <param name="array">The input array.</param>
+        /// <returns>The average position.</returns>
+        public static Vector2 CalculateCentroid(this Vector2[] array)
+        {
+            var sum = new Vector2();
+            var count = array.Length;
+            for (var i = 0; i < count; i++)
+            {
+                sum += array[i];
+            }
+            return sum / count;
+        }
+
+        /// <summary>
+        /// Calculates the average position of an array of Vector3.
+        /// </summary>
+        /// <param name="array">The input array.</param>
+        /// <returns>The average position.</returns>
+        public static Vector3 CalculateCentroid(this Vector3[] array)
+        {
+            var sum = new Vector3();
+            var count = array.Length;
+            for (var i = 0; i < count; i++)
+            {
+                sum += array[i];
+            }
+            return sum / count;
+        }
+
+        /// <summary>
+        /// Calculates the average position of an array of Vector4.
+        /// </summary>
+        /// <param name="array">The input array.</param>
+        /// <returns>The average position.</returns>
+        public static Vector4 CalculateCentroid(this Vector4[] array)
+        {
+            var sum = new Vector4();
+            var count = array.Length;
+            for (var i = 0; i < count; i++)
+            {
+                sum += array[i];
+            }
+            return sum / count;
+        }
+
+        /// <summary>
+        /// Calculates the average position of a List of Vector2.
+        /// </summary>
+        /// <param name="list">The input list.</param>
+        /// <returns>The average position.</returns>
+        public static Vector2 CalculateCentroid(this List<Vector2> list)
+        {
+            var sum = new Vector2();
+            var count = list.Count;
+            for (var i = 0; i < count; i++)
+            {
+                sum += list[i];
+            }
+            return sum / count;
+        }
+
+        /// <summary>
+        /// Calculates the average position of a List of Vector3.
+        /// </summary>
+        /// <param name="list">The input list.</param>
+        /// <returns>The average position.</returns>
+        public static Vector3 CalculateCentroid(this List<Vector3> list)
+        {
+            var sum = new Vector3();
+            var count = list.Count;
+            for (var i = 0; i < count; i++)
+            {
+                sum += list[i];
+            }
+            return sum / count;
+        }
+
+        /// <summary>
+        /// Calculates the average position of a List of Vector4.
+        /// </summary>
+        /// <param name="list">The input list.</param>
+        /// <returns>The average position.</returns>
+        public static Vector4 CalculateCentroid(this List<Vector4> list)
+        {
+            var sum = new Vector4();
+            var count = list.Count;
+            for (var i = 0; i < count; i++)
+            {
+                sum += list[i];
+            }
+            return sum / count;
         }
 
         #endregion

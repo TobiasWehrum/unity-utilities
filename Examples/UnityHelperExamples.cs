@@ -14,6 +14,7 @@ namespace UnityUtilities.Examples
         void Awake()
         {
             TransformVectorColorExamples();
+            CentroidExample();
             Vector2RotationExamples();
             GameObjectExamples();
             RectExamples();
@@ -21,6 +22,8 @@ namespace UnityUtilities.Examples
             CapsuleCastExample();
             RandomExamples();
             OtherExamples();
+
+            // You can find an example for eased lerping in MathHelperExamples.EasedLerpFactorExample()
         }
 
         void TransformVectorColorExamples()
@@ -47,6 +50,18 @@ namespace UnityUtilities.Examples
 
             // Sets the position/rotation of enemyIndicator to someEnemyTransform.position/rotation
             enemyIndicator.CopyPositionAndRotatationFrom(someEnemyTransform);
+        }
+
+        private void CentroidExample()
+        {
+            Vector3[] list = {
+                                new Vector3(-5, 10, 12),
+                                new Vector3(55, 32, 10),
+                                new Vector3(85, -40, 80)
+                             };
+
+            // Calculates the geometric center (the average) of the input list.
+            Debug.Log("Centroid: " + list.CalculateCentroid()); // => Centroid: (45.0, 0.7, 34.0)
         }
 
         void Vector2RotationExamples()

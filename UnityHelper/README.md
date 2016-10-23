@@ -31,6 +31,55 @@ Color halfTransparentColor = GetComponent<Renderer>().sharedMaterial.color.Chang
 enemyIndicator.CopyPositionAndRotatationFrom(someEnemyTransform);
 ```
 
+### Framerate-Independent Eased Lerping
+
+There are essentially two ways of lerping a value over time: linear (constant speed) or eased (e.g. getting slower the closer you are to the target, see http://easings.net.)
+
+For linear lerping (and most of the easing functions), you need to track the start and end positions and the time that elapsed.
+
+Calling something like `currentValue = Mathf.Lerp(currentValue, 1f, 0.95f);` every frame provides an easy way of eased lerping without tracking elapsed time or the starting value, but since it's called every frame, the actual traversed distance per second changes the higher the framerate is.
+
+EasedLerpFactor replaces the lerp parameter t to make it framerate-independent and easier to estimate.
+
+You can find more information about the formula used [here](https://www.scirra.com/blog/ashley/17/using-lerp-with-delta-time).
+
+You can use `MathHelper.EasedLerpFactor` to get the t used for a lerp or call `MathHelper.EasedLerp`, `UnityHelper.EasedLerpVector2`, `UnityHelper.EasedLerpVector3`, `UnityHelper.EasedLerpVector4` or `UnityHelper.EasedLerpColor` directly.
+
+![EasedLerpFactorExample Editor Screenshot](https://raw.githubusercontent.com/TobiasWehrum/unity-utilities/master/_Images/EasedLerpFactorExample.gif)
+
+```C#
+void Update()
+{
+	// Get the world position of the mouse pointer
+	Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+	mousePositionWorld.z = 0f;
+
+	// Set the runner position to the mouse pointer
+	runner.position = mousePositionWorld;
+
+	// Move the follower 75% of the remaining distance to the runner per second
+	follower.position = UnityHelper.EasedLerpVector3(follower.position, runner.position, 0.75f);
+
+	// ...which is the same as:
+
+	//float t = MathHelper.EasedLerpFactor(0.75f);
+	//follower.position = Vector3.Lerp(follower.position, mousePositionWorld, t);
+}
+```
+
+### Get the centroid from an array/list of Vector2/3/4
+
+```C#
+Vector3[] list = {
+					new Vector3(-5, 10, 12),
+					new Vector3(55, 32, 10),
+					new Vector3(85, -40, 80)
+				 };
+
+// Calculates the geometric center (the average) of the input list.
+Debug.Log("Centroid: " + list.CalculateCentroid()); // => Centroid: (45.0, 0.7, 34.0)
+```
+
 ### Vector2 Rotation
 
 ```C#
@@ -150,4 +199,4 @@ bool hitSomething = Physics.CapsuleCast(point1, point2, radius, Vector3.forward,
 
 ## Dependencies
 
-None.
+* [MathHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/MathHelper)

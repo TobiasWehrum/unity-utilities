@@ -31,7 +31,8 @@ You can also just use selected scripts, but you should check the "Dependencies" 
 The class documentation is available [here](http://tobiaswehrum.github.io/UnityUtilities/html/annotated.html).
 
 ## Changelog
-* 2016-10-20: Added [MathHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/MathHelper). Added randomization helper methods to [UnityHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/UnityHelper).
+* 2016-10-23: Fixed bugs/improved [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton). Added EasedLerp methods for float in [MathHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/MathHelper) and Vector2, Vector3 and Color in [UnityHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/UnityHelper).
+* 2016-10-22: Added [MathHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/MathHelper). Added randomization helper methods to [UnityHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/UnityHelper).
 * 2016-07-03: Added [MeshCreator](https://github.com/TobiasWehrum/unity-utilities/tree/master/MeshCreator).
 * 2016-06-19: Added [XmlHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/XmlHelper).
 * 2016-06-08: Added [UnityHelper](https://github.com/TobiasWehrum/unity-utilities/tree/master/UnityHelper).

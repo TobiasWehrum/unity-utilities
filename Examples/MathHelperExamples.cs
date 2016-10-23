@@ -13,6 +13,14 @@ namespace UnityUtilities.Examples
         {
             MappingExamples();
             AnglesExamples();
+
+            // Checks what calling the same EasedLerp from 0 to 1 and a factor of 75%
+            // with 1, 10, 100, 1000 or 10000 FPS would return after one second.
+            CheckEasedLerp(1);      // => 0.75
+            CheckEasedLerp(10);     // => 0.7499999
+            CheckEasedLerp(100);    // => 0.7499999
+            CheckEasedLerp(1000);   // => 0.7499995
+            CheckEasedLerp(10000);  // => 0.7500508
         }
 
         void Update()
@@ -70,9 +78,24 @@ namespace UnityUtilities.Examples
             // Set the runner position to the mouse pointer
             runner.position = mousePositionWorld;
 
-            // Each second, move the follower 75% of the remaining distance to the runner
-            float t = MathHelper.EasedLerpFactor(0.75f);
-            follower.position = Vector3.Lerp(follower.position, mousePositionWorld, t);
+            // Move the follower 75% of the remaining distance to the runner per second
+            follower.position = UnityHelper.EasedLerpVector3(follower.position, runner.position, 0.75f);
+
+            // ...which is the same as:
+
+            //float t = MathHelper.EasedLerpFactor(0.75f);
+            //follower.position = Vector3.Lerp(follower.position, mousePositionWorld, t);
+        }
+
+        void CheckEasedLerp(int steps)
+        {
+            var dt = 1f / steps;
+
+            var currentValue = 0f;
+            for (var i = 0; i < steps; i++)
+                currentValue = MathHelper.EasedLerp(currentValue, 1f, 0.75f, dt);
+
+            Debug.LogFormat("CheckEasedLerp({0}): {1}", steps, currentValue);
         }
     }
 }

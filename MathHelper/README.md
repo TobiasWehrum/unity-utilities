@@ -10,25 +10,34 @@ There are essentially two ways of lerping a value over time: linear (constant sp
 
 For linear lerping (and most of the easing functions), you need to track the start and end positions and the time that elapsed.
 
-Calling something like `currentValue = Mathf.Lerp(currentValue, 1f, 0.95f);` every frame provides an easy way of eased lerping without tracking elapsed time or the starting value, but since it's called every frame, the actual speed changes the higher the framerate is.
+Calling something like `currentValue = Mathf.Lerp(currentValue, 1f, 0.95f);` every frame provides an easy way of eased lerping without tracking elapsed time or the starting value, but since it's called every frame, the actual traversed distance per second changes the higher the framerate is.
 
 EasedLerpFactor replaces the lerp parameter t to make it framerate-independent and easier to estimate.
 
 You can find more information about the formula used [here](https://www.scirra.com/blog/ashley/17/using-lerp-with-delta-time).
 
+You can use `MathHelper.EasedLerpFactor` to get the t used for a lerp or call `MathHelper.EasedLerp`, `UnityHelper.EasedLerpVector2`, `UnityHelper.EasedLerpVector3`, `UnityHelper.EasedLerpVector4` or `UnityHelper.EasedLerpColor` directly.
+
 ![EasedLerpFactorExample Editor Screenshot](https://raw.githubusercontent.com/TobiasWehrum/unity-utilities/master/_Images/EasedLerpFactorExample.gif)
 
 ```C#
-// Get the world position of the mouse pointer
-Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-mousePositionWorld.z = 0f;
+void Update()
+{
+	// Get the world position of the mouse pointer
+	Vector3 mousePositionWorld = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+	mousePositionWorld.z = 0f;
 
-// Set the runner position to the mouse pointer
-runner.position = mousePositionWorld;
+	// Set the runner position to the mouse pointer
+	runner.position = mousePositionWorld;
 
-// Each second, move the follower 75% of the remaining distance to the runner
-float t = MathHelper.EasedLerpFactor(0.75f);
-follower.position = Vector3.Lerp(follower.position, mousePositionWorld, t);
+	// Move the follower 75% of the remaining distance to the runner per second
+	follower.position = UnityHelper.EasedLerpVector3(follower.position, runner.position, 0.75f);
+
+	// ...which is the same as:
+
+	//float t = MathHelper.EasedLerpFactor(0.75f);
+	//follower.position = Vector3.Lerp(follower.position, mousePositionWorld, t);
+}
 ```
 
 ### Mapping
