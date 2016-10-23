@@ -1,10 +1,10 @@
 # MathHelper
 
-The MathHelper contains methods to help with mapping and angles and a really nifty method for time-independent eased lerping.
+The MathHelper contains methods to help with mapping and angles and a really nifty method for framerate-independent eased lerping.
 
 ## Examples
 
-### Time-Independent Eased Lerping
+### Framerate-Independent Eased Lerping
 
 There are essentially two ways of lerping a value over time: linear (constant speed) or eased (e.g. getting slower the closer you are to the target, see http://easings.net.)
 
@@ -12,7 +12,7 @@ For linear lerping (and most of the easing functions), you need to track the sta
 
 Calling something like `currentValue = Mathf.Lerp(currentValue, 1f, 0.95f);` every frame provides an easy way of eased lerping without tracking elapsed time or the starting value, but since it's called every frame, the actual speed changes the higher the framerate is.
 
-EasedLerpFactor replaces the lerp T to make it time-independent and easier to estimate.
+EasedLerpFactor replaces the lerp parameter t to make it framerate-independent and easier to estimate.
 
 You can find more information about the formula used [here](https://www.scirra.com/blog/ashley/17/using-lerp-with-delta-time).
 

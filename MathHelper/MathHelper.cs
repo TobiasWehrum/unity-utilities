@@ -4,7 +4,7 @@ using Random = UnityEngine.Random;
 namespace UnityUtilities
 {
     /// <summary>
-    /// The MathHelper contains methods to help with mapping and angles and a really nifty method for time-independent eased lerping.
+    /// The MathHelper contains methods to help with mapping and angles and a really nifty method for framerate-independent eased lerping.
     /// </summary>
     public static class MathHelper
     {
@@ -128,7 +128,7 @@ namespace UnityUtilities
         #region Miscellaneous
 
         /// <summary>
-        /// Provides a time-independent T for lerping towards a target.
+        /// Provides a framerate-independent t for lerping towards a target.
         /// 
         /// Example:
         /// 
@@ -150,13 +150,13 @@ namespace UnityUtilities
         /// starting value, but since it's called every frame, the actual speed changes the higher
         /// the framerate is.
         /// 
-        /// This function replaces the lerp T to make it time-independent and easier to estimate.
+        /// This function replaces the lerp T to make it framerate-independent and easier to estimate.
         /// 
         /// For more info, see https://www.scirra.com/blog/ashley/17/using-lerp-with-delta-time.
         /// </summary>
         /// <param name="factor">How much % the lerp should cover per second.</param>
         /// <param name="deltaTime">How much time passed since the last call.</param>
-        /// <returns>The time-independent lerp T.</returns>
+        /// <returns>The framerate-independent lerp t.</returns>
         public static float EasedLerpFactor(float factor, float deltaTime = 0f)
         {
             if (deltaTime == 0f)
