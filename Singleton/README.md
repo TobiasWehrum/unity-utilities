@@ -12,7 +12,9 @@ Note that the Singleton pattern has quite a few shortcomings. For example, the i
 
 ### SingletonEntityManager
 
-If the following component is added on a game object in the scene, it could be accessed from anywhere via `SingletonEntityManager.Instance`, e.g.: `SingletonEntityManager.Instance.AddEntity(newEntity);`. This is available even before its `SingletonEntityManager.Awake()` is called.
+If the following component is added on a game object in the scene, it could be accessed from anywhere via `SingletonEntityManager.Instance`, e.g.: `SingletonEntityManager.Instance.AddEntity(newEntity);`. This is available even before `SingletonEntityManager.Awake()` is called.
+
+If you want to use OnDestroy(), you have to override it like shown in the example below. All other MonoBehaviour callbacks can be used as usual.
 
 ```C#
 public class SingletonEntityManager : SingletonMonoBehaviour<SingletonEntityManager>
@@ -27,6 +29,13 @@ public class SingletonEntityManager : SingletonMonoBehaviour<SingletonEntityMana
 	void Awake()
 	{
 		entities = new List<GameObject>();
+	}
+
+	// If you want to use OnDestroy(), you have to override it like this
+	protected override void OnDestroy()
+	{
+		base.OnDestroy();
+		Debug.Log("Destroyed");
 	}
 
 	public void AddEntity(GameObject entity)
@@ -46,8 +55,9 @@ public class SingletonEntityManager : SingletonMonoBehaviour<SingletonEntityMana
 The `SingletonMusicManager` in the following example can be accessed in the same way, but it is not destroyed when the scenes switches.
 
 You could make this SingletonMusicManager a prefab and drop it in multiple scenes that you work on. If at any time there are two `SingletonMusicManager`,
-the one from the previous scene survives and the new one is destroyed. (For that reason, you should never use `SingletonMusicManager.Awake()`. Instead,
-use `OnPersistentSingletonAwake()` because it is only called on "surviving" instances.)
+the one from the previous scene survives and the new one is destroyed. (For that reason, you should never create an `Awake()` method in a
+PersistentSingletonMonoBehaviour. Instead, use `OnPersistentSingletonAwake()` because it is only called on "surviving" instances. Similarily, you shouldn't
+have an `OnDestroy()` method which would be called if this is ever destroyed via `Destroy()`; instead, use `OnPersistentSingletonDestroyed()`.)
 
 Note that `SingletonMusicManager.Instance` is only available after `SingletonMusicManager.Awake()` was called, so if you need it in another `Awake()`
 call, you should put the `SingletonMusicManager` higher in the [Script Execution Order](http://docs.unity3d.com/Manual/class-ScriptExecution.html).
@@ -71,19 +81,27 @@ public class SingletonMusicManager : PersistentSingletonMonoBehaviour<SingletonM
 		FadeToRandomSong();
 	}
 
+	protected override void OnPersistentSingletonDestroyed()
+	{
+		base.OnPersistentSingletonDestroyed();
+		
+		// Stop the music when Destroy() was called on the active instance.
+		StopMusic();
+	}
+
 	public void PlayMusic()
 	{
-		// Start playing
+		Debug.Log("Play music");
 	}
 
 	public void StopMusic()
 	{
-		// Stop playing
+		Debug.Log("Stop music");
 	}
 
 	public void FadeToRandomSong()
 	{
-		// Fade to a random song
+		Debug.Log("Fade to a random song");
 	}
 }
 ```

@@ -66,12 +66,23 @@ namespace UnityUtilities
         /// <summary>
         /// If this is the persistent instance and it was destroyed (manually),
         /// remove the instance registration.
+        /// 
+        /// Note: This also means that you need to use
+        /// 
+        ///     protected override void OnDestroy()
+        ///     {
+        ///         base.OnDestroy();
+        ///         // [Your code]
+        ///     }
+        /// 
+        /// in subclasses.
         /// </summary>
         protected virtual void OnDestroy()
         {
             if (instance == this)
             {
                 instance = null;
+                OnPersistentSingletonDestroyed();
             }
         }
 
@@ -103,9 +114,19 @@ namespace UnityUtilities
 
         /// <summary>
         /// This method is called when the Awake() method of the first instance of the persistent
-        /// singleton is done. This is not called if this is a second instance and will be destroyed.
+        /// singleton is done. This is not called if this is a second instance (which is destroyed
+        /// automatically immediately).
         /// </summary>
         protected virtual void OnPersistentSingletonAwake()
+        {
+        }
+
+        /// <summary>
+        /// This method is called when the registered instance of the persistent singleton is either
+        /// destroyed manually by calling Destroy() or the application is closed. This is not called
+        /// if this is a second instance (which is destroyed automatically immediately).
+        /// </summary>
+        protected virtual void OnPersistentSingletonDestroyed()
         {
         }
 
