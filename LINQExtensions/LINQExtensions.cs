@@ -114,6 +114,20 @@ namespace UnityUtilities
         }
 
         /// <summary>
+        /// Applies the action to each element of the container in place.
+        /// </summary>
+        /// <typeparam name="T">The type of elemtens in the container.</typeparam>
+        /// <param name="container">A container whose elements are to be affected.</param>
+        /// <param name="action">The function to be applied to the elements in the container.</param>
+        public static void ForEach<T>(this IEnumerable<T> container, Action<T> action)
+        {
+            foreach (T element in container)
+            {
+                action(element);
+            }
+        }
+
+        /// <summary>
         /// Returns a random element from the array.
         /// </summary>
         /// <typeparam name="T">The array element type.</typeparam>
