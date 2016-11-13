@@ -4,7 +4,7 @@ A collection of extension methods for `IEnumerable`, `List` and arrays.
 
 ## Examples
 
-# RandomElement/Shuffle/ToOneLineString
+# RandomElement/Shuffle/ToOneLineString/ForEach
 
 ```C#
 int[] items = new int[] {1, 2, 3, 4, 5};
@@ -19,6 +19,9 @@ items.Shuffle();
 // Example output:
 // "3", "5", "2", "1", "4"
 Debug.Log(items.ToOneLineString());
+
+// Applies the function that takes the respective type to all the elements
+items.ForEach(i => Debug.Log(i));
 ```
 
 # Nearest
