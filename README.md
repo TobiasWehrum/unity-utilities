@@ -40,3 +40,4 @@ The class documentation is available [here](http://tobiaswehrum.github.io/UnityU
 * 2016-05-15: Added [LINQExtensions](https://github.com/TobiasWehrum/unity-utilities/tree/master/LINQExtensions) and [RandomBag](https://github.com/TobiasWehrum/unity-utilities/tree/master/RandomBag).
 * 2016-05-09: Added the [class documentation website](http://tobiaswehrum.github.io/UnityUtilities/html/annotated.html).
 * 2016-05-08: Added [Countdown](https://github.com/TobiasWehrum/unity-utilities/tree/master/Countdown), [NoiseOutputValue](https://github.com/TobiasWehrum/unity-utilities/tree/master/NoiseOutputValue), [Range](https://github.com/TobiasWehrum/unity-utilities/tree/master/Range) and [Singleton](https://github.com/TobiasWehrum/unity-utilities/tree/master/Singleton).
+* 2017-09-26: Removed .gitignore. Update note: This will break any scene you use example scripts in.
