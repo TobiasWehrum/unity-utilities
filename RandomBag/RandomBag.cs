@@ -93,7 +93,7 @@ namespace UnityUtilities
         public void SetRefillItems(T[] refillItems)
         {
             if (refillItems.Length == 0)
-                throw new ArgumentOutOfRangeException("refillItems", "RefillItems needs to contain at least one argument.");
+                throw new ArgumentOutOfRangeException("refillItems", "RefillItems needs to contain at least one item.");
 
             this.refillItems = refillItems;
             refillDelegate = null;
